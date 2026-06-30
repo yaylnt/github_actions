@@ -20,7 +20,11 @@ export default function Modal() {
 			<div className={styles.modal}>
 				{isOpen && (
 					<div className={styles.container}>
-						<button onClick={() => setIsOpen(false)}>
+						<button
+							onClick={() => {
+								setIsOpen(false);
+								(window as any).ym(110269587, 'reachGoal', 'close');
+							}}>
 							Закрыть модальное окно
 						</button>
 					</div>
