@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './modal.module.scss';
+import useMetrika from '../../hooks/useMetrika';
 export default function Modal() {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const { ym } = useMetrika();
 
 	useEffect(() => {
 		const handleEsc = (e: KeyboardEvent) => {
@@ -23,7 +25,7 @@ export default function Modal() {
 						<button
 							onClick={() => {
 								setIsOpen(false);
-								(window as any).ym(110269587, 'reachGoal', 'close');
+								ym('reachGoal', 'close');
 							}}>
 							Закрыть модальное окно
 						</button>
