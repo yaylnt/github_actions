@@ -26,6 +26,10 @@ export default function Modal() {
 							onClick={() => {
 								setIsOpen(false);
 								ym('reachGoal', 'close');
+								(window as any).gtag('event', 'button_click', {
+									send_to: 'G-2JCKTN9RLF', // указываем ID потока
+									event_name: 'button_click',
+								});
 							}}>
 							Закрыть модальное окно
 						</button>
